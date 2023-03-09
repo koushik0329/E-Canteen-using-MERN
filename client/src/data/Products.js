@@ -62,7 +62,7 @@ const products = [
       "Serves 1",
     price: 70,
     countInStock: 0,
-    rating: 0,
+    rating: 2,
     numReviews: 0,
   },
 ];
