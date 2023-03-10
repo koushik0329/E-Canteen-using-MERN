@@ -58,7 +58,7 @@ const ProfileTabs = () => {
       <form className="row  form-container" onSubmit={submitHandler}>
         <div className="col-md-6">
           <div className="form" >
-            <label for="account-fn" style={{color: "red"}}>UserName</label>
+            <label for="account-fn" style={{color: "white"}}>UserName</label>
             <input
               className="form-control"
               type="text"
@@ -71,7 +71,7 @@ const ProfileTabs = () => {
 
         <div className="col-md-6">
           <div className="form">
-            <label for="account-email" style={{color: "red"}}>E-mail Address</label>
+            <label for="account-email" style={{color: "white"}}>E-mail Address</label>
             <input
               className="form-control"
               type="email"
@@ -83,7 +83,7 @@ const ProfileTabs = () => {
         </div>
         <div className="col-md-6">
           <div className="form">
-            <label for="account-pass" style={{color: "red"}}>New Password</label>
+            <label for="account-pass" style={{color: "white"}}>New Password</label>
             <input
               className="form-control"
               type="password"
@@ -94,7 +94,7 @@ const ProfileTabs = () => {
         </div>
         <div className="col-md-6">
           <div className="form">
-            <label for="account-confirm-pass" style={{color: "red"}}>Confirm Password</label>
+            <label for="account-confirm-pass" style={{color: "white"}}>Confirm Password</label>
             <input
               className="form-control"
               type="password"
