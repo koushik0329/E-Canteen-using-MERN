@@ -30,7 +30,7 @@ const Orders = (props) => {
             <div className="table-responsive">
               <table className="table">
                 <thead>
-                  <tr>
+                  <tr style={{color:"#f3f3f3"}}>
                     <th>ID</th>
                     <th>STATUS</th>
                     <th>DATE</th>

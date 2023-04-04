@@ -25,9 +25,10 @@ const PlaceOrderScreen = ({ history }) => {
   cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100);
   cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
   cart.totalPrice = (
-    Number(cart.itemsPrice) +
-    Number(cart.shippingPrice) +
-    Number(cart.taxPrice)
+    Number(cart.itemsPrice) 
+    //+Number(cart.shippingPrice) +
+    //Number(cart.taxPrice)
+    
   ).toFixed(2);
 
   const orderCreate = useSelector((state) => state.orderCreate);
@@ -58,7 +59,7 @@ const PlaceOrderScreen = ({ history }) => {
     <>
       <Header />
       <div className="container">
-        <div className="row  order-detail">
+        <div className="row  order-detail" style={{backgroundColor:"whitesmoke"}}>
           <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
             <div className="row ">
               <div className="col-md-4 center">
@@ -84,11 +85,15 @@ const PlaceOrderScreen = ({ history }) => {
                 </div>
               </div>
               <div className="col-md-8 center">
-                <h5>
+                {/* <h5>
                   <strong>Order info</strong>
                 </h5>
-                <p>Shipping: {cart.shippingAddress.country}</p>
-                <p>Pay method: {cart.paymentMethod}</p>
+                <p>Shipping: {cart.shippingAddress.country}<p>
+                <p>Pay method: {cart.paymentMethod}</p> */}
+                <h5>
+                  <strong>Payment Info</strong>
+                </h5>
+                <p>Not paid</p>
               </div>
             </div>
           </div>
@@ -105,9 +110,10 @@ const PlaceOrderScreen = ({ history }) => {
                   <strong>Deliver to</strong>
                 </h5>
                 <p>
-                  Address: {cart.shippingAddress.city},{" "}
-                  {cart.shippingAddress.address},{" "}
-                  {cart.shippingAddress.postalCode}
+                  Name: {cart.shippingAddress.address},{" "}
+                  Block: {cart.shippingAddress.country},{" "}
+                  Room: {cart.shippingAddress.city},{" "}
+                  Floor: {cart.shippingAddress.postalCode}
                 </p>
               </div>
             </div>
@@ -153,17 +159,19 @@ const PlaceOrderScreen = ({ history }) => {
                   </td>
                   <td>Rs. {cart.itemsPrice}</td>
                 </tr>
-                <tr>
+                {/* <tr>
                   <td>
                     <strong>Shipping</strong>
                   </td>
                   <td>Rs. {cart.shippingPrice}</td>
-                </tr>
+                  <td>Rs. 0</td>
+                </tr> */}
                 <tr>
                   <td>
                     <strong>Tax</strong>
                   </td>
-                  <td>Rs. {cart.taxPrice}</td>
+                  {/* <td>Rs. {cart.taxPrice}</td> */}
+                  <td>Rs. 0</td>
                 </tr>
                 <tr>
                   <td>

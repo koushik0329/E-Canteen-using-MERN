@@ -70,7 +70,7 @@ const OrderScreen = ({ match }) => {
           <Message variant="alert-danger">{error}</Message>
         ) : (
           <>
-            <div className="row  order-detail">
+            <div className="row  order-detail" style={{backgroundColor:"#f3f3f3"}}>
               <div className="col-lg-4 col-sm-4 mb-lg-4 mb-5 mb-sm-0">
                 <div className="row">
                   <div className="col-md-4 center">
@@ -103,8 +103,8 @@ const OrderScreen = ({ match }) => {
                     <h5>
                       <strong>Order info</strong>
                     </h5>
-                    <p>Shipping: {order.shippingAddress.country}</p>
-                    <p>Pay method: {order.paymentMethod}</p>
+                    {/* <p>Shipping: {order.shippingAddress.country}</p> */}
+                    {/* <p>Pay method: {order.paymentMethod}</p> */}
                     {order.isPaid ? (
                       <div className="bg-info p-2 col-12">
                         <p className="text-white text-center text-sm-start">
@@ -134,9 +134,10 @@ const OrderScreen = ({ match }) => {
                       <strong>Deliver to</strong>
                     </h5>
                     <p>
-                      Address: {order.shippingAddress.city},{" "}
-                      {order.shippingAddress.address},{" "}
-                      {order.shippingAddress.postalCode}
+                      Name: {order.shippingAddress.address},{" "}
+                      Block: {order.shippingAddress.country},{" "}
+                      Room: {order.shippingAddress.city},{" "}
+                      Floor: {order.shippingAddress.postalCode}
                     </p>
                     {order.isDelivered ? (
                       <div className="bg-info p-2 col-12">
@@ -197,17 +198,18 @@ const OrderScreen = ({ match }) => {
                       </td>
                       <td>Rs. {order.itemsPrice}</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td>
                         <strong>Shipping</strong>
                       </td>
                       <td>Rs. {order.shippingPrice}</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                       <td>
                         <strong>Tax</strong>
                       </td>
-                      <td>Rs. {order.taxPrice}</td>
+                      {/* <td>Rs. {order.taxPrice}</td> */}
+                      <td>Rs. 0</td>
                     </tr>
                     <tr>
                       <td>
@@ -230,6 +232,7 @@ const OrderScreen = ({ match }) => {
                     )}
                   </div>
                 )}
+                
               </div>
             </div>
           </>
